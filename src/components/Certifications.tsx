@@ -28,7 +28,7 @@ function getTheme(issuer: string) {
   }
 }
 
-function LogoIcon({ issuer, initial, theme }: { issuer: string; initial: string; theme: ReturnType<typeof getTheme> }) {
+function LogoIcon({ issuer }: { issuer: string; initial: string; theme: ReturnType<typeof getTheme> }) {
   if (issuer === 'Google') return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32">
       <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
