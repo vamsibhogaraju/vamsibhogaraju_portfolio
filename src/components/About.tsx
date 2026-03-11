@@ -47,7 +47,10 @@ export default function About() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="about" style={{ background: '#080d14', padding: '120px 0' }}>
+    <section ref={sectionRef} id="about" className="about-section" style={{ background: '#080d14', padding: '120px 0' }}>
+      <style>{`
+        @media (max-width: 767px) { .about-section { padding: 60px 0 !important; } }
+      `}</style>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
         <style>{`
           .about-grid { display: grid; grid-template-columns: 1fr; gap: 64px; align-items: start; }
@@ -61,7 +64,7 @@ export default function About() {
             <blockquote
               style={{
                 fontFamily: "'Syne', sans-serif",
-                fontSize: '30px',
+                fontSize: 'clamp(22px, 4vw, 30px)',
                 fontWeight: 700,
                 color: '#f1f5f9',
                 lineHeight: 1.3,

@@ -87,9 +87,10 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" style={{ background: '#080d14', padding: '120px 0' }}>
+    <section id="contact" className="contact-section" style={{ background: '#080d14', padding: '120px 0' }}>
       <style>{`
-        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 64px; }
+        @media (max-width: 767px) { .contact-section { padding: 60px 0 !important; } }
+        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
         @media (min-width: 1024px) { .contact-grid { grid-template-columns: 38% 62%; } }
         .contact-input::placeholder { color: #475569; }
         .contact-link-card {
@@ -122,7 +123,7 @@ export default function Contact() {
             style={{
               fontFamily: "'Syne', sans-serif",
               fontWeight: 800,
-              fontSize: '44px',
+              fontSize: 'clamp(28px, 6vw, 44px)',
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
               color: '#f1f5f9',
@@ -203,7 +204,7 @@ export default function Contact() {
             background: 'rgba(13,21,38,0.8)',
             border: '1px solid rgba(255,255,255,0.07)',
             borderRadius: '14px',
-            padding: '36px',
+            padding: 'clamp(20px, 3vw, 36px)',
           }}
         >
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

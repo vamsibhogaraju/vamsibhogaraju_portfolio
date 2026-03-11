@@ -58,8 +58,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           : `0 0 12px ${project.accent}, 0 0 24px rgba(59,130,246,0.3)`,
       }} />
 
+      <style>{`
+        @media (max-width: 1023px) { .project-card { grid-column: span 1 !important; } }
+        @media (max-width: 767px) { .project-card-body { padding: 20px !important; } }
+      `}</style>
+
       {/* Body */}
-      <div style={{ display: 'flex', flexDirection: 'column', flex: 1, padding: '32px' }}>
+      <div className="project-card-body" style={{ display: 'flex', flexDirection: 'column', flex: 1, padding: '32px' }}>
         <span
           style={{
             display: 'inline-block',
@@ -81,7 +86,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <h3
           style={{
             fontFamily: "'Syne', sans-serif",
-            fontSize: isFeatured ? '26px' : '22px',
+            fontSize: isFeatured ? 'clamp(20px, 3.5vw, 26px)' : 'clamp(18px, 3vw, 22px)',
             fontWeight: 700,
             color: '#f1f5f9',
             marginBottom: '16px',

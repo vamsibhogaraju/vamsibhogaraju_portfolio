@@ -43,7 +43,7 @@ export default function Navbar() {
         height: '56px',
         display: 'flex',
         alignItems: 'center',
-        padding: '0 48px',
+        padding: '0 16px',
         background: 'rgba(8,13,20,0.6)',
         backdropFilter: 'blur(24px) saturate(180%)',
         WebkitBackdropFilter: 'blur(24px) saturate(180%)',

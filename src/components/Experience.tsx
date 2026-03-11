@@ -51,7 +51,8 @@ export default function Experience() {
   }, [])
 
   return (
-    <section id="experience" style={{ background: '#0d1526', padding: '120px 0' }}>
+    <section id="experience" className="exp-section" style={{ background: '#0d1526', padding: '120px 0' }}>
+      <style>{`@media (max-width: 767px) { .exp-section { padding: 60px 0 !important; } }`}</style>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
           <SectionLabel number="04" label="EXPERIENCE" />
@@ -59,7 +60,7 @@ export default function Experience() {
             style={{
               fontFamily: "'Syne', sans-serif",
               fontWeight: 800,
-              fontSize: '48px',
+              fontSize: 'clamp(32px, 6vw, 48px)',
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
               color: '#f1f5f9',
@@ -121,7 +122,7 @@ export default function Experience() {
                 style={{
                   width: '100%',
                   borderRadius: '12px',
-                  padding: '28px 32px',
+                  padding: 'clamp(16px, 3vw, 28px) clamp(16px, 3vw, 32px)',
                   background: 'linear-gradient(145deg, #131f38, #0e1a2e)',
                   border: '1px solid rgba(255,255,255,0.07)',
                   borderLeft: '3px solid #3b82f6',

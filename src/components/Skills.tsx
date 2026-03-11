@@ -60,6 +60,7 @@ export default function Skills() {
     <section id="skills" style={{ background: '#0d1526', padding: '120px 80px 120px' }}>
       <style>{`
         @media (max-width: 1023px) { #skills { padding: 120px 24px !important; } }
+        @media (max-width: 767px) { #skills { padding: 60px 16px !important; } }
         .skills-grid { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 1080px; padding: 0 24px; margin: 48px auto 0; align-items: stretch; }
         .skill-card { border-left: 3px solid rgba(59,130,246,0.4) !important; }
         .skill-card:hover { border-left-color: #3b82f6 !important; }
@@ -76,7 +77,7 @@ export default function Skills() {
           // 03 SKILLS
         </span>
         <h2 style={{
-          fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: '52px',
+          fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 'clamp(32px, 6vw, 52px)',
           letterSpacing: '-0.03em', lineHeight: 1.1, color: '#f1f5f9', marginTop: '12px',
         }}>
           Skills & Stack

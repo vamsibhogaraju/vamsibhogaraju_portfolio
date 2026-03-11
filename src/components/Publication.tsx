@@ -26,7 +26,8 @@ export default function Publication() {
   }, [])
 
   return (
-    <section id="publication" style={{ background: '#0d1526', padding: '120px 0 100px' }}>
+    <section id="publication" className="pub-section" style={{ background: '#0d1526', padding: '120px 0 100px' }}>
+      <style>{`@media (max-width: 767px) { .pub-section { padding: 60px 0 !important; } }`}</style>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
           <SectionLabel number="07" label="PUBLICATION" />
@@ -34,7 +35,7 @@ export default function Publication() {
             style={{
               fontFamily: "'Syne', sans-serif",
               fontWeight: 800,
-              fontSize: '48px',
+              fontSize: 'clamp(32px, 6vw, 48px)',
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
               color: '#f1f5f9',
@@ -59,7 +60,7 @@ export default function Publication() {
             maxWidth: '860px',
             margin: '0 auto',
             borderRadius: '20px',
-            padding: '48px',
+            padding: 'clamp(20px, 4vw, 48px)',
             background: 'linear-gradient(145deg, #131f38, #0e1a2e)',
             border: '1px solid rgba(59,130,246,0.15)',
             borderTop: '3px solid rgba(59,130,246,0.5)',
@@ -111,7 +112,7 @@ export default function Publication() {
           <h3
             style={{
               fontFamily: "'Syne', sans-serif",
-              fontSize: '30px',
+              fontSize: 'clamp(20px, 4vw, 30px)',
               fontWeight: 700,
               color: '#f1f5f9',
               lineHeight: 1.3,

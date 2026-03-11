@@ -12,7 +12,7 @@ export default function Hero() {
       style={{
         background: 'var(--bg-primary)',
         height: '100vh',
-        minHeight: '700px',
+        minHeight: '600px',
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
@@ -203,7 +203,7 @@ export default function Hero() {
               variants={heroItem}
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: '18px',
+                fontSize: 'clamp(15px, 2.5vw, 18px)',
                 color: '#94a3b8',
                 lineHeight: 1.65,
                 maxWidth: '480px',

@@ -34,7 +34,8 @@ export default function Projects() {
   }, [])
 
   return (
-    <section id="projects" style={{ background: '#080d14', padding: '120px 0' }}>
+    <section id="projects" className="projects-section" style={{ background: '#080d14', padding: '120px 0' }}>
+      <style>{`@media (max-width: 767px) { .projects-section { padding: 60px 0 !important; } }`}</style>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
         {/* Header */}
         <div ref={headerRef} style={{ marginBottom: '48px' }}>
@@ -43,7 +44,7 @@ export default function Projects() {
             style={{
               fontFamily: "'Syne', sans-serif",
               fontWeight: 800,
-              fontSize: '48px',
+              fontSize: 'clamp(32px, 6vw, 48px)',
               letterSpacing: '-0.03em',
               lineHeight: 1.1,
               color: '#f1f5f9',
