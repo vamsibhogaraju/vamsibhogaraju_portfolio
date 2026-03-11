@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #080d14;
+  --color-bg-secondary: #0d1526;
+  --color-bg-card: #111e35;
+  --color-bg-card-hover: #162541;
+  --color-accent: #3b82f6;
+  --color-accent-bright: #60a5fa;
+  --color-success: #10b981;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #475569;
+  --font-syne: 'Syne', sans-serif;
+  --font-dm: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --bg-primary: #080d14;
+  --bg-secondary: #0d1526;
+  --bg-card: #111e35;
+  --bg-card-hover: #162541;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(99, 179, 237, 0.25);
+  --accent: #3b82f6;
+  --accent-bright: #60a5fa;
+  --accent-glow: rgba(59, 130, 246, 0.15);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  --success: #10b981;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1526;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+::selection {
+  background: #3b82f6;
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Hero grain texture */
+.hero-grain {
+  position: relative;
+}
+.hero-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* Skip to content */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 200;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: white;
+  border-radius: 0 0 6px 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* GPU acceleration for animated sections */
+section {
+  will-change: auto;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* GSAP initial state - prevents flash */
+.gsap-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
